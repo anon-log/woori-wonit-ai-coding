@@ -28,3 +28,10 @@ playwright.config.js
 # git commit -m "feat: 실습03"
 # git push origin main
 # git remote -v
+
+# 특정 폴더 아래에 있는 파일을 제외할 때는 폴더경로까지 같이 적어줍니다.
+03 실습/test.txt
+
+# git에 이미 등록해 놓았던 파일을 나중에 제외하면 잘 안됩니다.
+# git rm --cached <파일명> 명령어를 사용해서 git에서 제거한 후에 .gitignore에 추가해야 합니다.
+.gitignore
