@@ -1,0 +1,73 @@
+<!-- 계좌번호, 잔액, 상태가 보이는 은행 계좌 카드 한 장 --> 
+<!-- "이 카드에 어울리는 CSS를 만들어줘. 
+ 흰 배경에 모서리 둥글게, 그림자 살짝. 모바일에서 보기 좋게."--> 
+ 
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>은행 계좌 카드</title>
+	<style>
+		* { box-sizing: border-box; }
+		body {
+			margin: 0;
+			min-height: 100vh;
+			display: grid;
+			place-items: center;
+			padding: 16px;
+			background: #fff;
+			font-family: Arial, "Noto Sans KR", sans-serif;
+			color: #172033;
+		}
+		.account-card {
+			width: min(390px, 100%);
+			padding: clamp(22px, 6vw, 28px);
+			border: 1px solid #edf0f5;
+			border-radius: 20px;
+			background: #fff;
+			box-shadow: 0 8px 24px rgba(23, 32, 51, .1);
+		}
+		.card-header, .balance-row {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		.bank-name { font-size: 18px; font-weight: 700; color: #ef1541; }
+		.card-label { margin: 30px 0 8px; font-size: 13px; opacity: .75; }
+		.account-number { font-size: 20px; letter-spacing: 1.5px; }
+		.balance-row { margin-top: 28px; }
+		.balance-label { font-size: 13px; opacity: .75; }
+		.balance { margin-top: 5px; font-size: 28px; font-weight: 700; }
+		.status {
+			padding: 7px 12px;
+			border-radius: 999px;
+			background: #eefbf3;
+			color: #168044;
+			font-size: 13px;
+		}
+		.status::before { content: "●"; margin-right: 6px; color: #2dbf6e; }
+		@media (max-width: 360px) {
+			.account-number { font-size: 17px; letter-spacing: 1px; }
+			.balance { font-size: 24px; }
+		}
+	</style>
+</head>
+<body>
+	<main class="account-card" aria-label="은행 계좌 정보">
+		<div class="card-header">
+			<span class="bank-name">우리은행</span>
+			<span aria-hidden="true">WON</span>
+		</div>
+		<p class="card-label">계좌번호</p>
+		<div class="account-number">1002-345-678901</div>
+		<div class="balance-row">
+			<div>
+				<div class="balance-label">현재 잔액</div>
+				<div class="balance">₩2,450,000</div>
+			</div>
+			<span class="status">정상</span>
+		</div>
+	</main>
+</body>
+</html>
